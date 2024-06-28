@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FiSun, FiMoon } from "react-icons/fi";
 
-function DarkMode() {
+function DarkMode({ className }) {
   const [isDark, setIsDark] = useState(localStorage.theme === "dark");
   function darkToggle() {
     setIsDark(!isDark);
@@ -21,7 +21,10 @@ function DarkMode() {
 
   return (
     <motion.div
-      className="flex items-center justify-center p-3 border rounded-full cursor-pointer bg-neutral-100 dark:bg-neutral-900 border-neutral-900/10 dark:border-neutral-100/10"
+      className={
+        "flex items-center justify-center p-3 border rounded-full cursor-pointer bg-neutral-100 dark:bg-neutral-900 border-neutral-900/10 dark:border-neutral-100/10 " +
+        className
+      }
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       onClick={darkToggle}

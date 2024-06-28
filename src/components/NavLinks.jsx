@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
-function NavLinks() {
+function NavLinks({ className }) {
   const location = useLocation();
   const navRef = useRef(null);
   const [activeLinkStyle, setActiveLinkStyle] = useState({ left: 0, width: 0 });
@@ -27,7 +27,7 @@ function NavLinks() {
   }, [location.pathname]);
 
   return (
-    <div className="relative">
+    <div className={"relative " + className}>
       <motion.div
         className="absolute top-0 left-0 h-full border bg-frost-lighter-shade dark:bg-frost-darker-shade border-neutral-900/10 dark:border-neutral-100/10 rounded-2xl"
         initial={false}

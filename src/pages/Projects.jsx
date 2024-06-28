@@ -4,7 +4,7 @@ import ProjectTile from "../components/ProjectTile";
 function Projects() {
   return (
     <div className="flex flex-col items-center justify-center gap-y-7">
-      <div className="w-[80%] flex flex-wrap gap-4 basis-0">
+      <div className="md:w-[80%] sm:w-[90%] w-[95%] flex flex-wrap gap-4 basis-0">
         <ProjectTile
           title="University Gatepass System"
           description="Developed a comprehensive solution for managing student entry and exit on campus, ensuring seamless integration for wardens, admins, guards, and over 1000 students. Designed a user-friendly interface and progressive web app (PWA) to streamline the request and approval process efficiently."

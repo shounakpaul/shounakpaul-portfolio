@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function ResponsibilityTile({
   icon,
@@ -10,17 +11,20 @@ function ResponsibilityTile({
   description,
 }) {
   return (
-    <div className="p-4 border bg-frost-lighter-shade dark:bg-frost-darker-shade rounded-2xl border-neutral-900/10 dark:border-neutral-100/10">
-      <div className="flex items-center p-2 gap-x-5">
+    <motion.div
+      whileHover={{ opacity: 0.7 }}
+      className="p-6 border bg-frost-lighter-shade dark:bg-frost-darker-shade rounded-2xl border-neutral-900/10 dark:border-neutral-100/10"
+    >
+      <div className="flex flex-col items-start sm:items-center sm:flex-row gap-x-5 gap-y-3">
         <div className="p-3 rounded-full bg-neutral-900/10 dark:bg-neutral-100/10">
           {icon}
         </div>
-        <div className="flex flex-row items-center justify-between w-full">
+        <div className="flex flex-col w-full sm:items-center sm:justify-between sm:flex-row">
           <div>
             <p className="text-lg font-bold">{company}</p>
             <p className="text-sm">{position}</p>
           </div>
-          <div className="text-right">
+          <div className="sm:text-right">
             <p className="text-sm">
               {start} - {end}
             </p>
@@ -31,7 +35,7 @@ function ResponsibilityTile({
       <div className="mt-3">
         <p className="text-sm">{description}</p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

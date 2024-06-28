@@ -4,7 +4,7 @@ import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 
 function ExperienceComponent() {
   return (
-    <div className="w-[40%]">
+    <div className="xl:w-[60%] lg:w-[70%] w-[95%]">
       <p className="text-3xl font-bold mb-7 ">Experience</p>
       <div className="relative flex flex-col w-full pl-10 border-l-4 gap-y-5 border-frost-lighter-shade dark:border-frost-darker-shade">
         {/* Wrap EducationTile in a container and add a custom class for the line */}

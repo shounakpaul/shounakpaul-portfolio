@@ -2,11 +2,12 @@ import React from "react";
 import { BsFillSendFill } from "react-icons/bs";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
+import { motion } from "framer-motion";
 
 function Contact() {
   return (
     <div className="flex flex-col items-center justify-center gap-y-7">
-      <div className="w-[40%]">
+      <div className="xl:w-[35%] md:w-[70%] lg:w-[50%] w-[95%]">
         <p className="mb-4 text-2xl font-bold">Contact me</p>
         <form
           className="flex flex-col gap-y-3"
@@ -39,8 +40,9 @@ function Contact() {
           <div className="flex justify-end my-5"></div>
         </form>
         <p className="mb-4 text-2xl font-bold">Also I am available on...</p>
-        <div className="flex flex-wrap gap-x-5">
-          <a
+        <div className="flex flex-wrap gap-5">
+          <motion.a
+            whileHover={{ opacity: 0.7 }}
             href="https://www.linkedin.com/in/paulshounak"
             target="_blank"
             rel="noreferrer"
@@ -48,8 +50,9 @@ function Contact() {
           >
             <FaLinkedin className="inline-block" />
             LinkedIn
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            whileHover={{ opacity: 0.7 }}
             href="https://www.github.com/shounakpaul"
             target="_blank"
             rel="noreferrer"
@@ -57,8 +60,9 @@ function Contact() {
           >
             <FaGithub className="inline-block" />
             GitHub
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            whileHover={{ opacity: 0.7 }}
             href="mailto:paul.shounak@outlook.com"
             target="_blank"
             rel="noreferrer"
@@ -66,7 +70,7 @@ function Contact() {
           >
             <IoMdMail className="inline-block" />
             Email
-          </a>
+          </motion.a>
         </div>
       </div>
     </div>
