@@ -3,7 +3,11 @@ import { motion } from "framer-motion";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 function DarkMode({ className }) {
-  const [isDark, setIsDark] = useState(localStorage.theme === "dark");
+  const [isDark, setIsDark] = useState(
+    localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+  );
   function darkToggle() {
     setIsDark(!isDark);
     if (localStorage.theme === "dark") {
