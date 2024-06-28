@@ -8,20 +8,28 @@ function Contact() {
     <div className="flex flex-col items-center justify-center gap-y-7">
       <div className="w-[40%]">
         <p className="mb-4 text-2xl font-bold">Contact me</p>
-        <form className="flex flex-col gap-y-3">
+        <form
+          className="flex flex-col gap-y-3"
+          action="mailto:paul.shounak@outlook.com"
+          method="post"
+          encType="text/plain"
+        >
           <input
             type="text"
             placeholder="Name"
+            name="Name"
             className="w-full p-5 border rounded-2xl border-neutral-900/10 dark:border-neutral-100/10 bg-frost-lighter-shade dark:bg-frost-darker-shade"
           />
           <input
             type="email"
             placeholder="Email"
+            name="E-Mail ID"
             className="w-full p-5 border rounded-2xl border-neutral-900/10 dark:border-neutral-100/10 bg-frost-lighter-shade dark:bg-frost-darker-shade"
           />
           <textarea
             placeholder="Message"
-            className="w-full p-5 border rounded-2xl border-neutral-900/10 dark:border-neutral-100/10 bg-frost-lighter-shade dark:bg-frost-darker-shade"
+            name="Message"
+            className="w-full p-5 border resize-none rounded-2xl border-neutral-900/10 dark:border-neutral-100/10 bg-frost-lighter-shade dark:bg-frost-darker-shade"
             rows="10"
           ></textarea>
           <button className="flex flex-row items-center justify-center p-4 my-5 border rounded-2xl gap-x-5 border-neutral-900/10 dark:border-neutral-100/10 bg-frost-lighter-shade dark:bg-frost-darker-shade">
@@ -33,7 +41,7 @@ function Contact() {
         <p className="mb-4 text-2xl font-bold">Also I am available on...</p>
         <div className="flex flex-wrap gap-x-5">
           <a
-            href="https://www.linkedin.com/in/username"
+            href="https://www.linkedin.com/in/paulshounak"
             target="_blank"
             rel="noreferrer"
             className="flex flex-row items-center justify-center flex-grow p-4 border gap-x-2 rounded-2xl border-neutral-900/10 dark:border-neutral-100/10 bg-frost-lighter-shade dark:bg-frost-darker-shade"
@@ -42,7 +50,7 @@ function Contact() {
             LinkedIn
           </a>
           <a
-            href="https://www.github.com/username"
+            href="https://www.github.com/shounakpaul"
             target="_blank"
             rel="noreferrer"
             className="flex flex-row items-center justify-center flex-grow p-4 border gap-x-2 rounded-2xl border-neutral-900/10 dark:border-neutral-100/10 bg-frost-lighter-shade dark:bg-frost-darker-shade"
