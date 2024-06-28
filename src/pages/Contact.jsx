@@ -33,10 +33,13 @@ function Contact() {
             className="w-full p-5 border resize-none rounded-2xl border-neutral-900/10 dark:border-neutral-100/10 bg-frost-lighter-shade dark:bg-frost-darker-shade"
             rows="10"
           ></textarea>
-          <button className="flex flex-row items-center justify-center p-4 my-5 border rounded-2xl gap-x-5 border-neutral-900/10 dark:border-neutral-100/10 bg-frost-lighter-shade dark:bg-frost-darker-shade">
+          <motion.button
+            whileHover={{ opacity: 0.7 }}
+            className="flex flex-row items-center justify-center p-4 my-5 border rounded-2xl gap-x-5 border-neutral-900/10 dark:border-neutral-100/10 bg-frost-lighter-shade dark:bg-frost-darker-shade"
+          >
             <BsFillSendFill className="inline-block" />
             Send
-          </button>
+          </motion.button>
           <div className="flex justify-end my-5"></div>
         </form>
         <p className="mb-4 text-2xl font-bold">Also I am available on...</p>
