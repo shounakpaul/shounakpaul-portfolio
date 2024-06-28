@@ -9,7 +9,7 @@ function Projects() {
           title="University Gatepass System"
           description="Developed a comprehensive solution for managing student entry and exit on campus, ensuring seamless integration for wardens, admins, guards, and over 1000 students. Designed a user-friendly interface and progressive web app (PWA) to streamline the request and approval process efficiently."
           techStack="React, Node.js, Express, MSSQL, Tailwind CSS, Figma"
-          link="#"
+          link="https://github.com/shounakpaul/Gatepass"
         />
         <ProjectTile
           title="DocInsight"
@@ -39,7 +39,7 @@ function Projects() {
           title="Event Recommendation System"
           description="Developed an event recommendation system, utilizing collaborative filtering and content-based algorithms for accurate personalized suggestions. Implemented user feedback mechanisms to continually enhance recommendation relevance, aiming to optimize user engagement and satisfaction with event choices."
           techStack="Python, TensorFlow"
-          link="#"
+          link="https://github.com/shounakpaul/EvRecSys"
         />
       </div>
     </div>

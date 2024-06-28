@@ -20,7 +20,6 @@ function DarkMode({ className }) {
       localStorage.theme = "dark";
       document.documentElement.classList.add("dark");
     }
-    console.log(localStorage.theme);
   }
 
   return (
