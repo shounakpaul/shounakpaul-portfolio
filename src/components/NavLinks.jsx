@@ -38,14 +38,7 @@ function NavLinks() {
         ref={navRef}
         className="relative flex flex-row items-center text-lg gap-x-3"
       >
-        {[
-          "/",
-          "/education",
-          "/experience",
-          "/projects",
-          "/certifications",
-          "/contact",
-        ].map((path) => (
+        {["/", "/experience", "/projects", "/contact"].map((path) => (
           <Link
             key={path}
             to={path}
@@ -58,6 +51,14 @@ function NavLinks() {
               : path.substring(1).charAt(0).toUpperCase() + path.substring(2)}
           </Link>
         ))}
+        <a
+          href="https://1drv.ms/w/s!Asj88EIyKcfMxxNnmqOtWJuX_1HD?e=HbNJUa"
+          target="_blank"
+          rel="noreferrer"
+          className="relative z-10 p-2"
+        >
+          Resume
+        </a>
       </div>
     </div>
   );
