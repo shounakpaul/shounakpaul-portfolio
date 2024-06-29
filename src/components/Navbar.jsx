@@ -6,7 +6,7 @@ import MobileNavMenu from "./MobileNavMenu";
 
 function Navbar() {
   return (
-    <div className="flex flex-row items-center justify-between px-4 border shadow-md py-7 sm:px-10 sm:py-7 bg-frost-light-shade dark:bg-frost-dark-shade rounded-2xl border-neutral-900/10 dark:border-neutral-100/10 ">
+    <div className="flex flex-row items-center justify-between px-4 border py-7 sm:px-10 sm:py-7 bg-frost-light-shade dark:bg-frost-dark-shade rounded-2xl border-neutral-900/10 dark:border-neutral-100/10 ">
       <ProfilePic />
       <NavLinks className="hidden lg:block" />
       <DarkMode className="hidden lg:flex" />
