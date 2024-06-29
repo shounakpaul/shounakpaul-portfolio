@@ -1,67 +1,93 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
 function NavLinks({ className }) {
   const location = useLocation();
-  const navRef = useRef(null);
-  const [activeLinkStyle, setActiveLinkStyle] = useState({ left: 0, width: 0 });
-
-  useEffect(() => {
-    const updateActiveLinkStyle = () => {
-      const activeLink = navRef.current.querySelector(
-        `a[href="${location.pathname}"]`
-      );
-      if (activeLink) {
-        const { offsetLeft, offsetWidth } = activeLink;
-        setActiveLinkStyle({ left: offsetLeft, width: offsetWidth });
-      }
-    };
-
-    updateActiveLinkStyle();
-    window.addEventListener("resize", updateActiveLinkStyle);
-
-    return () => {
-      window.removeEventListener("resize", updateActiveLinkStyle);
-    };
-  }, [location.pathname]);
+  const [position, setPosition] = useState({
+    left: 0,
+    width: 0,
+    opacity: 0,
+  });
 
   return (
     <div className={"relative " + className}>
-      <motion.div
-        className="absolute top-0 left-0 h-full border bg-frost-lighter-shade dark:bg-frost-darker-shade border-neutral-900/10 dark:border-neutral-100/10 rounded-2xl"
-        initial={false}
-        animate={{ left: activeLinkStyle.left, width: activeLinkStyle.width }}
-        transition={{ type: "spring", stiffness: 500, damping: 30 }}
-      />
       <div
-        ref={navRef}
-        className="relative flex flex-row items-center text-lg gap-x-3"
+        className="relative flex flex-row items-center p-2 text-lg border gap-x-3 rounded-2xl border-neutral-900/10 dark:border-neutral-100/10"
+        onMouseLeave={() => {
+          setPosition((pv) => ({
+            ...pv,
+            opacity: 0,
+          }));
+        }}
       >
         {["/", "/experience", "/projects", "/contact"].map((path) => (
-          <Link
+          <Tab
             key={path}
             to={path}
-            className={`relative p-2 z-10 ${
-              location.pathname === path ? "" : ""
-            }`}
+            setPosition={setPosition}
+            location={location}
           >
             {path === "/"
               ? "About"
               : path.substring(1).charAt(0).toUpperCase() + path.substring(2)}
-          </Link>
+          </Tab>
         ))}
-        <a
+        <Tab
+          isExternal
           href="https://1drv.ms/w/s!Asj88EIyKcfMxxNnmqOtWJuX_1HD?e=HbNJUa"
-          target="_blank"
-          rel="noreferrer"
-          className="relative z-10 p-2"
+          setPosition={setPosition}
         >
           Resume
-        </a>
+        </Tab>
+        <Cursor position={position} />
       </div>
     </div>
   );
 }
+
+const Tab = ({ children, to, href, setPosition, location, isExternal }) => {
+  const ref = useRef(null);
+
+  const handleMouseEnter = () => {
+    if (!ref?.current) return;
+
+    const { width } = ref.current.getBoundingClientRect();
+    setPosition({
+      left: ref.current.offsetLeft,
+      width,
+      opacity: 1,
+    });
+  };
+
+  const isActive = to && location?.pathname === to;
+
+  const commonProps = {
+    ref,
+    onMouseEnter: handleMouseEnter,
+    className: `relative p-2 z-10 ${isActive ? "text-primary font-bold" : ""}`,
+  };
+
+  return isExternal ? (
+    <a href={href} target="_blank" rel="noreferrer" {...commonProps}>
+      {children}
+    </a>
+  ) : (
+    <Link to={to} {...commonProps}>
+      {children}
+    </Link>
+  );
+};
+
+const Cursor = ({ position }) => {
+  return (
+    <motion.div
+      animate={{
+        ...position,
+      }}
+      className="absolute z-0 border rounded-2xl bg-frost-lighter-shade dark:bg-frost-darker-shade border-neutral-900/10 dark:border-neutral-100/10 h-7 md:h-12"
+    />
+  );
+};
 
 export default NavLinks;
