@@ -35,7 +35,7 @@ function NavLinks({ className }) {
         ))}
         <Tab
           isExternal
-          href="https://1drv.ms/w/s!Asj88EIyKcfMxxNnmqOtWJuX_1HD?e=HbNJUa"
+          href="https://docs.google.com/document/d/1eQSSynxM_mz08wgadbYu5KOn_0dSwTImlqQPsP0S29o/edit?usp=sharing"
           setPosition={setPosition}
         >
           Resume
