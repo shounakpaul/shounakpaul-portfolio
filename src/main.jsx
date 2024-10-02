@@ -3,11 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { AppRoutes } from "./Routes.jsx";
 
-if (
-  localStorage.theme === "dark" ||
-  (!("theme" in localStorage) &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches)
-) {
+if (!("theme" in localStorage)) {
+  localStorage.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+if (localStorage.theme === "dark") {
   document.documentElement.classList.add("dark");
 } else {
   document.documentElement.classList.remove("dark");

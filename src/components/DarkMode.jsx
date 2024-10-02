@@ -4,18 +4,14 @@ import { FiSun, FiMoon } from "react-icons/fi";
 
 function DarkMode({ className }) {
   const [isDark, setIsDark] = useState(
-    localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    localStorage.theme === "dark"
   );
+
   function darkToggle() {
     setIsDark(!isDark);
     if (localStorage.theme === "dark") {
       localStorage.theme = "light";
       document.documentElement.classList.remove("dark");
-    } else if (localStorage.theme === "light") {
-      localStorage.theme = "dark";
-      document.documentElement.classList.add("dark");
     } else {
       localStorage.theme = "dark";
       document.documentElement.classList.add("dark");
