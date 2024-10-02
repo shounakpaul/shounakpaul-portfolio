@@ -12,7 +12,7 @@ function Projects() {
           link="https://github.com/shounakpaul/Gatepass"
         />
         <ProjectTile
-          title="DocInsight"
+          title="Document-Based Chatbot Using LLM and Retrieval-Augmented Generation (RAG)"
           description="Developed a web-based chatbot interface enabling document uploads to provide contextual responses. Built with React on the frontend and Python (Flask) on the backend, it features a minimalistic UI for interactions and PDF uploads. Utilized LangChain for document processing and local LLM models for context-based responses."
           techStack="React, Python, Langchain, Ollama, ChromaDB"
           link="https://github.com/shounakpaul/DocInsight"
@@ -40,6 +40,18 @@ function Projects() {
           description="Developed an event recommendation system, utilizing collaborative filtering and content-based algorithms for accurate personalized suggestions. Implemented user feedback mechanisms to continually enhance recommendation relevance, aiming to optimize user engagement and satisfaction with event choices."
           techStack="Python, TensorFlow"
           link="https://github.com/shounakpaul/EvRecSys"
+        />
+        <ProjectTile
+          title="DCGAN for Cat Image Generation"
+          description="Implemented a Deep Convolutional Generative Adversarial Network (DCGAN) for generating cat images using PyTorch. Trained the model on the Cat Dataset to generate realistic cat images, leveraging the power of GANs for high-quality image generation."
+          techStack="Python, Pytorch"
+          link="https://github.com/shounakpaul/gan-cat-image-generation"
+        />
+        <ProjectTile
+          title="Siamese Neural Network based Face Recognition"
+          description="Developed a face recognition system using a Siamese Neural Network architecture to identify and verify faces. Trained the model on the LFW dataset, achieving high accuracy in face recognition tasks. Implemented using Python and TensorFlow for efficient performance."
+          techStack="Python, TensorFlow"
+          link="https://github.com/shounakpaul/siamese-face-recognition"
         />
       </div>
     </div>
