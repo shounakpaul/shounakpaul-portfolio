@@ -1,13 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shounak Paul</title>
+    <title>Shounak Paul — Generative AI Engineer</title>
+    <meta
+      name="description"
+      content="Shounak Paul is a Generative AI Engineer in Kolkata working on voice agents, retrieval systems, and backend services. Currently at Chat360."
+    />
+    <meta name="author" content="Shounak Paul" />
+    <meta name="robots" content="index, follow" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#09090B" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Shounak Paul — Generative AI Engineer" />
+    <meta
+      property="og:description"
+      content="Generative AI engineer in Kolkata working on voice agents, retrieval systems, and backend services. Currently at Chat360."
+    />
+    <meta property="og:locale" content="en_IN" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Shounak Paul — Generative AI Engineer" />
+    <meta
+      name="twitter:description"
+      content="Generative AI engineer in Kolkata working on voice agents, retrieval systems, and backend services. Currently at Chat360."
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link
+      rel="preload"
+      href="/fonts/dm-sans-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/instrument-serif-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/instrument-serif-italic-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var theme = stored === "light" ? "light" : "dark";
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+          var themeColor = document.querySelector('meta[name="theme-color"]');
+          if (themeColor) {
+            themeColor.setAttribute(
+              "content",
+              theme === "dark" ? "#09090B" : "#F4F4F5"
+            );
+          }
+        } catch (error) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Shounak Paul",
+        "jobTitle": "Gen AI Engineer",
+        "description": "Generative AI Engineer in Kolkata working on voice agents, retrieval systems, and backend services.",
+        "email": "paul.shounak@outlook.com",
+        "telephone": "+91-9330461388",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kolkata",
+          "addressCountry": "IN"
+        },
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Chat360"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "NIIT University"
+        },
+        "sameAs": [
+          "https://github.com/shounakpaul",
+          "https://www.linkedin.com/in/paulshounak"
+        ],
+        "knowsAbout": [
+          "Generative AI",
+          "Voice AI",
+          "Agentic workflows",
+          "Retrieval-augmented generation",
+          "Model Context Protocol",
+          "LLM evaluation",
+          "Backend engineering",
+          "AWS"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <div style="max-width: 42rem; margin: 4rem auto; padding: 1.5rem; font-family: system-ui, sans-serif; line-height: 1.6;">
+        <h1 style="font-size: 1.75rem; margin-bottom: 0.75rem;">Shounak Paul — Generative AI Engineer</h1>
+        <p>
+          This portfolio needs JavaScript to render. You can reach me at
+          <a href="mailto:paul.shounak@outlook.com">paul.shounak@outlook.com</a>
+          or find my work on
+          <a href="https://github.com/shounakpaul">GitHub</a>.
+        </p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
